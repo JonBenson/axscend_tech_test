@@ -124,7 +124,7 @@ The error handling is fairly blunt and just throws the user to an error page upo
 - Proper caching and maybe offline support
 - Stronger error handling and maybe retries on server error codes and time outs (currently any error just takes the user to an error page)
 - Handling a refresh during an in-flight request
-- Custom support for tablet and phone layouts
+- Custom support for tablet and phone layouts. At the moment sizes are hard coded, I would update these to be dynamic to the device screen size using MediaQuery.
 - More testing
 
 ## Author
