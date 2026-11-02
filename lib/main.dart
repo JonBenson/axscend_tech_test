@@ -12,13 +12,13 @@ void main() async {
       supportedLocales: [const Locale('en', 'GB')],
       path: 'assets/translations',
       fallbackLocale: const Locale('en'),
-      child: const AxsendApp(),
+      child: const AxscendApp(),
     ),
   );
 }
 
-class AxsendApp extends StatelessWidget {
-  const AxsendApp({super.key});
+class AxscendApp extends StatelessWidget {
+  const AxscendApp({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
