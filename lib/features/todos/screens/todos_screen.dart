@@ -15,8 +15,10 @@ class ToDosScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (_) =>
-          TodosProvider(repo: TodoRepository(ApiClient()), userId: userId),
+      create: (_) => TodosProvider(
+        repo: TodoRepository(context.read<ApiClient>()),
+        userId: userId,
+      ),
       child: const ToDoList(),
     );
   }

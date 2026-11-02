@@ -18,8 +18,10 @@ class AlbumsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Albums')),
       body: ChangeNotifierProvider(
-        create: (_) =>
-            AlbumsProvider(repo: AlbumRepository(ApiClient()), userId: userId),
+        create: (_) => AlbumsProvider(
+          repo: AlbumRepository(context.read<ApiClient>()),
+          userId: userId,
+        ),
         child: const AlbumList(),
       ),
     );

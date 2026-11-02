@@ -18,7 +18,7 @@ class PhotosScreen extends StatelessWidget {
       appBar: AppBar(title: const Text('Photos')),
       body: ChangeNotifierProvider(
         create: (_) => PhotosProvider(
-          repo: AlbumRepository(ApiClient()),
+          repo: AlbumRepository(context.read<ApiClient>()),
           albumId: albumId,
         ),
         child: const PhotoList(),

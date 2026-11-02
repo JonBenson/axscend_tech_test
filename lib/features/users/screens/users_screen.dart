@@ -15,7 +15,8 @@ class UsersScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (_) => UsersProvider(repo: UserRepository(ApiClient())),
+      create: (_) =>
+          UsersProvider(repo: UserRepository(context.read<ApiClient>())),
       child: const UserList(),
     );
   }

@@ -17,8 +17,10 @@ class CommentsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Comments')),
       body: ChangeNotifierProvider(
-        create: (_) =>
-            CommentsProvider(repo: PostRepository(ApiClient()), postId: postId),
+        create: (_) => CommentsProvider(
+          repo: PostRepository(context.read<ApiClient>()),
+          postId: postId,
+        ),
         child: const CommentList(),
       ),
     );

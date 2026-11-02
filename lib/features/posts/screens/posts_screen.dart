@@ -17,8 +17,10 @@ class PostsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Posts')),
       body: ChangeNotifierProvider(
-        create: (_) =>
-            PostsProvider(repo: PostRepository(ApiClient()), userId: userId),
+        create: (_) => PostsProvider(
+          repo: PostRepository(context.read<ApiClient>()),
+          userId: userId,
+        ),
         child: const PostsList(),
       ),
     );
