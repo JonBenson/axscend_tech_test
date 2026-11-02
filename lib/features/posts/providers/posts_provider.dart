@@ -12,6 +12,6 @@ class PostsProvider extends PaginationProvider<Post> {
 
   @override
   Future<List<Post>> fetchNextPage() {
-    return repo.getPostsForUser(userId: 1, page: currentPage);
+    return repo.getPostsForUser(userId: userId, page: currentPage);
   }
 }
